@@ -9,9 +9,12 @@ For example, it is possible to ask users at runtime to take actions during an ET
 The built-in System.user is not usable in standalone executions because it refers to standard I/O console, not available in general in an Eclipse lauched app. (Tested under MacOSX)
 This plugin, instead, prompts GUI dialogs on screen, using method calls compatible with original ones.
 
-i.e. System.user.prompt("Title", "Default option");
+i.e. 
+```
+System.user.prompt("Title", "Default option");
             ... BECOMES ...
-     <your_variable_name>.prompt("Title", "Default option");
+<your_variable_name>.prompt("Title", "Default option");
+```
      
 It is also obviously possible to use this plugin in a non-standalone Epsilon program, making zero-time modification to obtain a standalone Epsilon code.
 
@@ -21,7 +24,7 @@ To use this external plugin in Epsilon programs, you have to use the Native() fu
 Every Epsilon Language (except for EOL, which is in some sense never used alone) has a "pre" section. At this point you must firstly declare using Native() function this plugin, in order to use it from the very next line of code to the end.
 
 i.e.
-'''
+```
 pre {
   // declare User Input
   var userinput = new Native("userinput.api.UserInput");
@@ -32,9 +35,9 @@ pre {
   ...
 
 }
-'''
+```
 
-** REMEMBER to add Dependency into your own project **
+**REMEMBER to add Dependency into your own project**
 
 ## Credits
 TizGecko (c) 2020, The University of L'Aquila
